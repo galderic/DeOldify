@@ -158,7 +158,8 @@ class ModelImageVisualizer:
         )
 
     def _save_result_image(self, source_path: Path, image: Image) -> Path:
-        result_path = self.results_dir / source_path.name
+        target = source_path.stem + ".png"
+        result_path = self.results_dir / target
         image.save(result_path)
         return result_path
 
